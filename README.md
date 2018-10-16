@@ -22,7 +22,7 @@ Your job is to fill in the column matrix with the appropriate values. There are 
 
 ![im2col example](figs/im2col.gif)
 
-Fill in the values appropriately.
+This is an example of `im2col` on a `7x7x3` image with filter size of 3 and a stride of 1. Note, the letters aren't meant to convey that the values are the same in each channel of the image, just to help you understand which positional elements map to where in the output.
 
 ### 5.2 `col2im` ###
 
@@ -34,9 +34,19 @@ Now you have to update your convolutional layer! This will be very similar to th
 
 ## 6. Maxpooling ##
 
+Maxpooling is another core building block of convolutional neural networks. Implementing maxpooling will be similar to implementing convolutions in some ways, you will have to iterate over the image, process a window of pixels with some fixed size, and in this case find the maximum value to put into the output.
+
 ### 6.1 `forward_maxpool_layer` ###
 
+Write the forward method to find the maximum value in a given window size, moving by some strided amount between applications. Note: maxpooling happens on each channel independently.
+
 ### 6.2 `backward_maxpool_layer` ###
+
+The backward method will be similar to forward. Even though the window size may be large, only one element contributed to the error in the prediction so we only backpropagate our deltas to a single element in the input per window. Thus, you'll iterate through again and find the maximum value and then backpropagate error to the appropriate element in `prev_delta` corresponding to the position of the maximum element.
+
+## PyTorch Section ##
+
+Upload `homework1_colab.ipynb` to Colab and train some big convolutional networks on real image datasets, like ImageNet! Once you are done with this section make sure you re-download your Python notebook so you can turn it in!
 
 ## Turn it in ##
 
@@ -46,5 +56,5 @@ First run the `collate.sh` script by running:
     
 This will create the file `submit.tar.gz` in your directory with all the code you need to submit. The command will check to see that your files have changed relative to the version stored in the `git` repository. If it hasn't changed, figure out why, maybe you need to download your ipynb from google?
 
-Submit `submit.tar.gz` in the file upload field for Homework 0 on Canvas.
+Submit `submit.tar.gz` in the file upload field for Homework 1 on Canvas.
 
