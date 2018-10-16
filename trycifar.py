@@ -24,7 +24,7 @@ def conv_net():
     return make_net(l)
 
 def your_net():
-    # Define your network architecture here. How many operations does it need for a forward pass?
+    # Define your network architecture here. It should have 5 layers. How many operations does it need for a forward pass?
     # It doesn't have to be exactly the same as conv_net but it should be close.
     l = [   make_connected_layer(3072, 10, SOFTMAX)]
     return make_net(l)
