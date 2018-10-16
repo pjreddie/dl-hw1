@@ -44,6 +44,16 @@ Write the forward method to find the maximum value in a given window size, movin
 
 The backward method will be similar to forward. Even though the window size may be large, only one element contributed to the error in the prediction so we only backpropagate our deltas to a single element in the input per window. Thus, you'll iterate through again and find the maximum value and then backpropagate error to the appropriate element in `prev_delta` corresponding to the position of the maximum element.
 
+## Experiments With Convnets! ##
+
+There are several examples of convnet architectures in `trycifar.py` and `trymnist.py`. Try them out and try a few of your own!
+
+Now, for the unmodified convnet architecture in `trycifar.py`, calculate how many operations it takes to process one forward pass through the network. You only need to worry about the matrix operations since everything else is pretty small compared to them.
+
+Let's assume that we have fused multiply-adds so a matrix multiplication of a `M x K` matrix with a `K x N` matrix takes `M*K*N` operations. How many operations does the convnet use during a forward pass?
+
+Design a fully-connected network that uses the same number of operations and has the same number of layers. Now train this network on CIFAR. What are the comparative accuracies of the two networks? Do convolutions work better than fully-connected layers? Why do you think in this case you see the results you do, what indicators do you have? Put your network configuration and answers to these questions in `trycifar.py`.
+
 ## PyTorch Section ##
 
 Upload `homework1_colab.ipynb` to Colab and train some big convolutional networks on real image datasets, like ImageNet! Once you are done with this section make sure you re-download your Python notebook so you can turn it in!
