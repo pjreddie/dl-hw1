@@ -12,7 +12,7 @@ In this homework we will implement convolutional layers using the `im2col` metho
 
 ### 5.1 `im2col` ###
 
-As we discussed in lecture, the most of our convolution code will be handeled our `im2col` funciton. Check out `forward_convolutional_layer` to see how our layer will be processed using this function. The basic idea is our filters are already stored appropriately in the `l.w` matrix. We simply need to layout our image correctly so that doing a matrix multiplication results in running the filters over the image.
+As we discussed in lecture, most of our convolution code will be handeled our `im2col` funciton. Check out `forward_convolutional_layer` to see how our layer will be processed using this function. The basic idea is our filters are already stored appropriately in the `l.w` matrix. We simply need to lay out our image correctly so that doing a matrix multiplication results in running the filters over the image.
 
 First, let's start with some assumptions. We assume that we will always use padding for our convolutions, thus a convolutional layer with a stride of 1 will always return a feature map with the same spatial dimensions as the original. For strided convolutions, if the feature map is a multiple of the stride we simply return a feature map that is downsampled by a factor of the stride. If the input size is not divisible by the stride, we err on the side of making the output slightly larger, not smaller.
 
