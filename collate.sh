@@ -11,6 +11,7 @@ prepare () {
 echo "Creating tarball..."
 prepare src/convolutional_layer.c
 prepare src/maxpool_layer.c
+prepare trycifar.py
 prepare homework1_colab.ipynb
 
 tar cvzf submit.tar.gz submit
