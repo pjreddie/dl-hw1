@@ -41,7 +41,7 @@ rate = .01
 momentum = .9
 decay = .0005
 
-m = le_net2()
+m = le_net()
 print("training...")
 train_image_classifier(m, train, batch, iters/2, rate, momentum, decay)
 train_image_classifier(m, train, batch, iters/2, rate*.1, momentum, decay)
