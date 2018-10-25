@@ -13,6 +13,7 @@ prepare src/convolutional_layer.c
 prepare src/maxpool_layer.c
 prepare trycifar.py
 prepare homework1_colab.ipynb
+prepare homework1_python.pdf
 
 tar cvzf submit.tar.gz submit
 rm -rf submit/
